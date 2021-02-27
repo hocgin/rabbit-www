@@ -85,7 +85,7 @@ let WebsiteConfig = {
   }],
   project: [{
     title: '小程序',
-    remark: '我们已开发提供 10+ 个小程序，可以持续为用户提供良好的服务 😊',
+    remark: '我们已开发提供 10+ 个小程序，可以持续为用户提供良好的服务，欢迎加盟 😊',
     icon: <AppstoreOutlined />,
     color: '#5956e9',
     backgroundColor: '#F1F1FC',
