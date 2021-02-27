@@ -26,7 +26,7 @@ let WebsiteConfig = {
       src: 'http://cdn.hocgin.top/uPic/NES模拟器.jpeg',
     }],
   }, {
-    title: '🚀 浏览器天气插件.',
+    title: '🚗 浏览器天气插件.',
     subTitle: '浏览器天气插件',
     remark: '完美支持 Chrome 内核的浏览器',
     actions: [{

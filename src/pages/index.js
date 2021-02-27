@@ -34,7 +34,7 @@ class index extends React.Component {
     return (<div className={styles.page}>
       <section className={styles.topSection}>
         <header className={styles.topHeader}>
-          <a href='#' className={styles.logo}>HOCGIN<span className={styles.suffix}>.top</span></a>
+          <a href='#' className={styles.logo}>HOCGIN<span className={styles.suffix}><span className={styles.dot}>.</span>top</span></a>
           <div className={classnames(styles.toggle, {
             [styles.active]: isOpenMenu,
           })} onClick={this.onClickToggle}>{isOpenMenu ? <CloseOutlined /> : <MenuOutlined />}</div>
@@ -50,7 +50,7 @@ class index extends React.Component {
       {website?.analysis?.length > 0 ? <section className={styles.counterupContainer}>
         <Row className={styles.containerWrapper} gutter={{ xs: 2 }}>
           {((website?.analysis || []).map(({ title, count, icon, color, backgroundColor }, index) => (
-            <Col key={`${index}`} xs={12} sm={6}>
+            <Col key={`${index}`} xs={24} sm={6}>
               <Counter title={title} count={count}
                        icon={icon} color={color} backgroundColor={backgroundColor} />
             </Col>)))}
