@@ -5,17 +5,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  overflow-y: hidden;
 
   .suffix {
     font-size: 6px;
   }
 
-  section {
+  .topSection {
     padding: 100px;
-    height: 100vh;
+    min-height: 100vh;
+    background-image: url(http://cdn.hocgin.top/uPic/hero-bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
   }
 
-  header {
+  .topHeader {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,12 +98,12 @@
       &:before {
         content: "";
         position: absolute;
-        height: 2px;
+        height: 3px;
         width: 0;
         bottom: 0;
         left: 0;
         visibility: hidden;
-        background-color: #f82249;
+        background-color: @themeColor;
         transition: all 0.3s ease-in-out 0s;
       }
     }
@@ -193,13 +200,43 @@
   }
 }
 
+// 数据指标
+.counterupContainer {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .containerWrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+}
+
+// 产品
+.productContainer {
+  background-color: #F3F7FF;
+  padding-bottom: 90px;
+  padding-top: 115px;
+
+
+  .containerWrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+
+    .product {
+      padding: 15px;
+    }
+  }
+}
+
+
 .mobile({
   .page {
-    section {
+    .topSection {
       padding: 80px 20px;
     }
 
-    header {
+    .topHeader {
       padding: 10px 20px;
       height: 70px;
     }

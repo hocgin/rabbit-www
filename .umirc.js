@@ -2,9 +2,12 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  title: 'title',
+  title: 'HOCGIN.',
   antd: {},
   dva: {},
+  theme: {
+    'primary-color': '#767BDF',
+  },
   outputPath: './dist',
   // exportStatic: {
   //   htmlSuffix: true,

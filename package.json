@@ -11,6 +11,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@ant-design/compatible": "^0.0.1-rc.1",
     "@hocgin/gin-footer": "latest",
     "@ant-design/icons": "^4.5.0",
     "antd": "^4.8.2",
