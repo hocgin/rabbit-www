@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.less';
 import { RiseOutlined } from '@ant-design/icons';
+import { Statistic } from 'antd';
 
 class Index extends React.PureComponent {
   render() {
@@ -9,7 +10,8 @@ class Index extends React.PureComponent {
       <div className={styles.component}>
         <div className={styles.icon} style={{ color, backgroundColor }}>{icon}</div>
         <div className={styles.content}>
-          <div><h3 className={styles.number} style={{ color }}>{count}+</h3></div>
+          <div><h3 className={styles.number}><Statistic valueStyle={{ color }} loading={false} value={count}
+                                                        suffix={'+'} /></h3></div>
           <span className={styles.title}>{title}</span>
         </div>
       </div>
