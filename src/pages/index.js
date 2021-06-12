@@ -42,8 +42,8 @@ class index extends React.Component {
           <ul className={classnames(styles.navigation, {
             [styles.active]: isOpenMenu,
           })}>
-            <li><Link to={'https://www.hocgin.top/'}>首页</Link></li>
-            <li><Link to={'https://nes.hocgin.top/'}>🎮 游戏机</Link></li>
+            <li><a href={'https://www.hocgin.top/'}>首页</a></li>
+            <li><a href={'https://nes.hocgin.top/'}>🎮 游戏机</a></li>
           </ul>
         </header>
         <Slide slide={website?.slide} />
