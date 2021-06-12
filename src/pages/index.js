@@ -34,7 +34,8 @@ class index extends React.Component {
     return (<div className={styles.page}>
       <section className={styles.topSection}>
         <header className={styles.topHeader}>
-          <a href='#' className={styles.logo}>HOCGIN<span className={styles.suffix}><span className={styles.dot}>.</span>top</span></a>
+          <a href='#' className={styles.logo}>HOCGIN<span className={styles.suffix}><span
+            className={styles.dot}>.</span>top</span></a>
           <div className={classnames(styles.toggle, {
             [styles.active]: isOpenMenu,
           })} onClick={this.onClickToggle}>{isOpenMenu ? <CloseOutlined /> : <MenuOutlined />}</div>
@@ -42,6 +43,7 @@ class index extends React.Component {
             [styles.active]: isOpenMenu,
           })}>
             <li><Link to={'#'}>首页</Link></li>
+            <li><Link to={'https://nes.hocgin.top/'}>🎮 游戏机</Link></li>
           </ul>
         </header>
         <Slide slide={website?.slide} />
