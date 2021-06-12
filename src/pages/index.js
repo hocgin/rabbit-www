@@ -34,7 +34,7 @@ class index extends React.Component {
     return (<div className={styles.page}>
       <section className={styles.topSection}>
         <header className={styles.topHeader}>
-          <a href='#' className={styles.logo}>HOCGIN<span className={styles.suffix}><span
+          <a href='http://hocg.in/' className={styles.logo}>HOCGIN<span className={styles.suffix}><span
             className={styles.dot}>.</span>top</span></a>
           <div className={classnames(styles.toggle, {
             [styles.active]: isOpenMenu,
@@ -42,7 +42,7 @@ class index extends React.Component {
           <ul className={classnames(styles.navigation, {
             [styles.active]: isOpenMenu,
           })}>
-            <li><Link to={'#'}>首页</Link></li>
+            <li><Link to={'https://www.hocgin.top/'}>首页</Link></li>
             <li><Link to={'https://nes.hocgin.top/'}>🎮 游戏机</Link></li>
           </ul>
         </header>
