@@ -56,6 +56,10 @@ let WebsiteConfig = {
       icon: <HomeOutlined />,
       title: '网站',
       href: 'https://nes.hocgin.top/',
+    }, {
+      icon: <HomeOutlined />,
+      title: '小程序',
+      href: 'weixin://dl/business/?t=zi2ejmZs2Kf',
     }],
   }],
   analysis: [{
