@@ -3,7 +3,7 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-    branches:
+    branches:1
       - master
     tags:
       - 'v*'
