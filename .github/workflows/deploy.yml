@@ -3,8 +3,6 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-    branches:
-      - master
     tags:
       - 'v*'
     paths-ignore:
@@ -26,53 +24,28 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-#      - name: Cache node modules
-#        uses: actions/cache@v2
-#        env:
-#          cache-name: cache-node-modules
-#        with:
-#          path: ~/.npm
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-
-#            ${{ runner.os }}-build-
-#            ${{ runner.os }}-
-#      - name: Install npm dependencies
-#        run: npm install
-#      - name: Run build
-#        run: npm run build
-#      - name: Deploy to Server
-#        uses: easingthemes/ssh-deploy@main
-#        env:
-#          ARGS: "-rltgoDzvO --delete"
-#          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-#          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-#          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-#          TARGET: ${{ secrets.REMOTE_TARGET }}
-#          SOURCE: "dist/"
-#          EXCLUDE: "/dist/, /node_modules/"
-#
-#      # 企业微信通知
-#      - name: WeChat Work Prepare
-#        id: wx_prep
-#        run: |
-#          echo ::set-output name=wx_created::$(TZ=Asia/Shanghai date -d @`date +%s` "+%Y-%m-%d %H:%M:%S")
-#          GITHUB_REF=${{github.base_ref}}
-#          echo ::set-output name=wx_base_ref::$(echo ${GITHUB_REF#refs/heads/})
-#          GITHUB_REF=${{github.event.ref}}
-#          echo ::set-output name=wx_target_ref::$(echo ${GITHUB_REF#refs/heads/})
-#      - name: WeChat Work Notification
-#        uses: chf007/action-wechat-work@master
-#        env:
-#          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-#        with:
-#          msgtype: markdown
-#          content: "🎉**【[${{ github.repository }}](https://github.com/${{ github.repository }})】** \n
-#          \n
-#          🏃 [@${{ github.actor }}](https://github.com/${{ github.actor }})\n
-#          🕐 <font color=\"comment\">${{ steps.wx_prep.outputs.wx_created }}</font> \n
-#          🔧 <font color=\"warning\">${{ steps.wx_prep.outputs.wx_base_ref || '∅' }} -> ${{ steps.wx_prep.outputs.wx_target_ref }}</font> \n
-#          📝 <font color=\"comment\"> ${{ github.event.head_commit.message }}</font> \n
-#          \n
-#          [查看详情](https://www.hocgin.top)
-#          "
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install npm dependencies
+        run: npm install
+      - name: Run build
+        run: npm run build
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          ARGS: "-rltgoDzvO --delete"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
+          SOURCE: "dist/"
+          EXCLUDE: "/dist/, /node_modules/"

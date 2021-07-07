@@ -38,12 +38,6 @@
     "react-test-renderer": "^16.7.0",
     "umi": "^3.2.27"
   },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "engines": {
     "node": ">=8.0.0"
   }
