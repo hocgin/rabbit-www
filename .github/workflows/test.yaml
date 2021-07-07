@@ -1,0 +1,19 @@
+name: Watch Workflow Status
+on:
+  workflow_run:
+    workflows: [ "Deploy" ]
+    types: [ completed ]
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: |
+          echo 'ok'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: |
+          echo 'fail'
