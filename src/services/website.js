@@ -17,7 +17,11 @@ let WebsiteConfig = {
     title: '🚀 我们都是自己的英雄.',
     subTitle: '我们都是自己的英雄',
     remark: '超多优惠(外卖、电影、星巴克等)、刷步数、壁纸等好用工具',
-    actions: [],
+    actions: [{
+      icon: <HomeOutlined />,
+      title: '网站',
+      href: 'https://tools.hocgin.top/',
+    }],
     images: [{
       src: 'http://cdn.hocgin.top/uPic/mp-logo.jpg',
     }, {
@@ -64,19 +68,19 @@ let WebsiteConfig = {
   }],
   analysis: [{
     title: '服务人数',
-    count: '6,000',
+    count: '16,000',
     icon: <RiseOutlined />,
     color: '#5956e9',
     backgroundColor: '#F1F1FC',
   }, {
     title: '访问总量',
-    count: '111,200',
+    count: '211,200',
     icon: <FireOutlined />,
     color: '#F0AC44',
     backgroundColor: '#FDF7EC',
   }, {
     title: '注册用户',
-    count: '1,200',
+    count: '2,200',
     icon: <UserOutlined />,
     color: '#E3607F',
     backgroundColor: '#FCEFF2',
