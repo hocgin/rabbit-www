@@ -2,6 +2,11 @@ name: Deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      use_cache:
+        description: '是否使用 NPM 缓存'
+        required: true
+        default: 'true'
   push:
     tags:
       - 'v*'
@@ -25,6 +30,7 @@ jobs:
         with:
           node-version: '10.x'
       - name: Cache node modules
+        if: ${{ github.event.inputs.use_cache != 'false' }}
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -40,7 +46,7 @@ jobs:
       - name: Run build
         run: npm run build
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@v2.2.11
         env:
           ARGS: "-rltgoDzvO --delete"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
