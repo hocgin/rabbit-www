@@ -54,4 +54,4 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
           SOURCE: "dist/"
-          EXCLUDE: "/node_modules/"
+          EXCLUDE: "/dist/, /node_modules/"
