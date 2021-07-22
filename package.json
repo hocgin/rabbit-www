@@ -13,7 +13,7 @@
   "dependencies": {
     "@ant-design/compatible": "^0.0.1-rc.1",
     "@ant-design/icons": "^4.5.0",
-    "@hocgin/gin-footer": "^3.0.22",
+    "@hocgin/ui": "^4.0.2",
     "antd": "^4.8.2",
     "classnames": "latest",
     "dva": "^2.6.0-beta.21",
