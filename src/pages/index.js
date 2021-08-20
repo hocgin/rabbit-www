@@ -12,6 +12,7 @@ import { dispatchType } from '@/utils/model-utils';
 import classnames from 'classnames';
 import { Col, Row } from 'antd';
 import WebsiteConfig from '@/services/website';
+import { Header } from '@hocgin/ui';
 
 @connect(({ global, apps, loading, ...rest }) => {
   return {
@@ -33,19 +34,9 @@ class index extends React.Component {
     let { isOpenMenu } = this.state;
     return (<div className={styles.page}>
       <section className={styles.topSection}>
-        <header className={styles.topHeader}>
-          <a href='http://hocg.in/' className={styles.logo}>HOCGIN<span className={styles.suffix}><span
-            className={styles.dot}>.</span>top</span></a>
-          <div className={classnames(styles.toggle, {
-            [styles.active]: isOpenMenu,
-          })} onClick={this.onClickToggle}>{isOpenMenu ? <CloseOutlined /> : <MenuOutlined />}</div>
-          <ul className={classnames(styles.navigation, {
-            [styles.active]: isOpenMenu,
-          })}>
-            <li><a href={'https://www.hocgin.top/'}>首页</a></li>
-            <li><a href={'https://nes.hocgin.top/'}>🎮 游戏机</a></li>
-          </ul>
-        </header>
+        <Header menus={[
+          { href: 'https://www.hocgin.top', title: '首页' },
+          { href: 'https://nes.hocgin.top', title: '🎮 游戏机' }]} />
         <Slide slide={website?.slide} />
       </section>
       {/*数据指标*/}
