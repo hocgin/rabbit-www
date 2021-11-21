@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dm-rabbit-www
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbit-www
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: rabbit-www
+    spec:
+      containers:
+        - name: rabbit-www
+          image: registry.cn-hongkong.aliyuncs.com/hocgin/rabbit-www:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7001
+          envFrom:
+            - configMapRef:
+                name: cm-service-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-rabbit-www
+spec:
+  type: NodePort
+  ports:
+    - port: 7001
+      targetPort: 7001
+      protocol: TCP
+  selector:
+    app: rabbit-www
