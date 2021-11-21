@@ -1,66 +1,38 @@
-## 描述
-> Dva + Umi + Antd 的简单脚手架，会结合一些常用工具类。
+# ssr-with-eggjs
 
-## 如何运行项目
-> 需具备node环境, 自行安装
+> 使用 Antd + Egg + SSR 构建网站
 
-```shell
-# 安装依赖环境
-npm install
 
-# 运行项目, 运行后访问 http://localhost:8000/
-npm start
+## 如何使用
 
-# 编译项目, 编译后会在当前项目根目录生成`dist/`文件夹
-npm build
+1. 安装
 
+```sh
+$ yarn
 ```
 
-## 项目整体结构说明
-```sbtshell
-.
-├── docker                          // docker 相关脚本[开发阶段使用]
-│   ├── docker-compose.dev.yml
-│   ├── docker-compose.yml
-│   └── nginx.conf
-├── docs                            // 其他相关文件
-├── scripts                         // 脚本文件
-├── mock                            // mock 相关文件[与API接口一一对应]
-│   ├── api.js
-│   └── utils
-├── src                             // 源码
-│   ├── api                         // API 接口
-│   ├── assets                      // 图片资源
-│   ├── components                  // 组件
-│   ├── models                      // dva model
-│   ├── pages                       // 页面
-│   ├── utils                       // 工具包(主要包含: 请求封装, 常量定义, 格式化工具)
-│   ├── global.css                  // 全局css
-│   ├── config.js                   // 全局配置(主要包含: 环境配置)
-│   ├── layouts                     // 顶层布局
-│   └── mixin.less                  // 通用less
-├── Dockerfile                      // Docker 构建文件
-├── Dockerfile.dev                  // Docker 构建文件(Mock 模式)
-├── CHANGELOG.md                    // 更新日志
-├── README.md                       // README.md
-├── package.json
-├── package-lock.json
-└── yarn.lock
+2. 开发环境运行
+
+```sh
+$ npm run dev
+$ open http://localhost:7001/
 ```
 
-## dva model 文件说明
-```sbtshell
-.
-├── .tpl.js             // 模板文件
-└── app.js              // 全局 model
+3. 生产环境运行
+
+```bash
+$ npm run build
+$ npm run start
 ```
 
-## 相关url说明
-> - 路径命名全小写，单词之间用"-"分隔。例如: /hello-world
-> - 传参统一使用 URL 进行传递。例如: /hello-world?lang=java
+## Q&A
 
-- /test: 测试页面
+### 如何国际化
 
+目前是按照cookie > 浏览器默认语言 > 默认语言顺序选择   
+由于服务端获取不到localStorage，所以要通过cookie将所需信息带到服务端
 
-## 更新日志
-[更新日志](CHANGELOG.md)
+### 如何部署
+
+egg内置了cluster模式，执行yarn start即可，详情见[egg官网](https://eggjs.org)  
+Docker 部署可以查看 ./Dockerfile 文件
