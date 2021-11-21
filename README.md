@@ -1,7 +1,6 @@
-# ssr-with-eggjs
+# rabbit-www
 
 > 使用 Antd + Egg + SSR 构建网站
-
 
 ## 如何使用
 
