@@ -3,6 +3,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "UMI_ENV=prod umi build",
+    "build:cdn": "UMI_ENV=prod.cdn umi build",
     "build:local": "UMI_ENV=local umi build",
     "build:dev": "UMI_ENV=dev umi build",
     "build:test": "UMI_ENV=test umi build",
@@ -13,7 +14,7 @@
   "dependencies": {
     "@ant-design/compatible": "^0.0.1-rc.1",
     "@ant-design/icons": "^4.5.0",
-    "@hocgin/ui": "latest",
+    "@hocgin/ui": "^4.0.40",
     "antd": "^4.8.2",
     "classnames": "latest",
     "dva": "^2.6.0-beta.21",
