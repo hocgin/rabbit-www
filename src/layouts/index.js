@@ -1,11 +1,12 @@
 import styles from './index.less';
-import { Footer } from '@hocgin/ui';
+import {Footer, Eggs} from '@hocgin/ui';
 
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
       {props.children}
-      <Footer />
+      <Eggs/>
+      <Footer/>
     </div>
   );
 }
