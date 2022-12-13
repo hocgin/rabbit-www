@@ -7,5 +7,5 @@ export default defineConfig({
   // ssr: {},
   hash: true,
   favicons: ['https://cdn.hocgin.top/uPic/favicon.ico'],
-  // publicPath: `https://cdn.hocgin.top/${__dirname.split('/').pop()}/`,
+  publicPath: `https://cdn.hocgin.top/${__dirname.split('/').pop()}/`,
 });
