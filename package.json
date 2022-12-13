@@ -1,45 +1,37 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
-    "build": "UMI_ENV=prod umi build",
-    "build:cdn": "UMI_ENV=prod.cdn umi build",
-    "build:local": "UMI_ENV=local umi build",
-    "build:dev": "UMI_ENV=dev umi build",
-    "build:test": "UMI_ENV=test umi build",
-    "test": "UMI_ENV=test umi test",
-    "lint": "eslint --ext .js src mock tests",
+    "start": "max dev",
+    "build": "UMI_ENV=prod max build",
+    "build:prod.cdn": "UMI_ENV=prod.cdn max build",
+    "build:local": "UMI_ENV=local max build",
+    "build:dev": "UMI_ENV=dev max build",
+    "build:test": "UMI_ENV=test max build",
+    "test": "UMI_ENV=test max test",
     "precommit": "lint-staged"
   },
   "dependencies": {
     "@ant-design/compatible": "^0.0.1-rc.1",
     "@ant-design/icons": "^4.5.0",
-    "@hocgin/ui": "^4.0.40",
-    "antd": "^4.8.2",
-    "classnames": "latest",
-    "dva": "^2.6.0-beta.21",
+    "@hocgin/hkit": "^2.0.16",
+    "@hocgin/ui": "^5.0.7",
+    "antd": "5.0.3",
+    "classnames": "^2.3.1",
     "hash.js": "latest",
-    "moment": "latest",
-    "prop-types": "^15.7.2",
-    "query-string": "latest",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "query-string": "^7.0.1"
   },
   "devDependencies": {
-    "@umijs/preset-react": "^1.6.19",
-    "babel-eslint": "^9.0.0",
-    "eslint": "^5.4.0",
-    "eslint-config-umi": "^1.4.0",
-    "eslint-plugin-flowtype": "^2.50.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.11.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^4.1.2",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "react-test-renderer": "^16.7.0",
-    "umi": "^3.2.27"
+    "@umijs/max": "^4.0.0",
+    "react": "18.x",
+    "react-dom": "18.x"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12.0.0"
   }
 }

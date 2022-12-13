@@ -36,7 +36,7 @@ npm build
 │   ├── pages                       // 页面
 │   ├── utils                       // 工具包(主要包含: 请求封装, 常量定义, 格式化工具)
 │   ├── global.css                  // 全局css
-│   ├── config.js                   // 全局配置(主要包含: 环境配置)
+│   ├── config.ts                   // 全局配置(主要包含: 环境配置)
 │   ├── layouts                     // 顶层布局
 │   └── mixin.less                  // 通用less
 ├── Dockerfile                      // Docker 构建文件
