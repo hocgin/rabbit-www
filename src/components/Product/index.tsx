@@ -3,7 +3,7 @@ import styles from './index.less';
 import {Link} from 'umi';
 
 export default function ({href, title, remark, icon, color, backgroundColor}: any) {
-  return (<div className={styles.component}>
+  return (<div className={styles.component} style={{backgroundColor: '#fff'}}>
     <div className={styles.iconWrapper}>
       <div className={styles.icon} style={{color, backgroundColor}}>{icon}</div>
     </div>
