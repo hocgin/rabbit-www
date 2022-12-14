@@ -116,7 +116,12 @@
 .mobile({
   .page {
     .topSection {
-      padding: 0 20px;
+      padding: unset;
+
+      & > header, & > div {
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
     }
 
     .topHeader {
