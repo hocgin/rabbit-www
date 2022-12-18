@@ -8,19 +8,26 @@
   overflow-y: hidden;
 
   .topSection {
-    padding: 0 100px;
     min-height: 100vh;
-    background-image: url(http://cdn.hocgin.top/uPic/hero-bg.png);
+    background-image: url(https://cdn.hocgin.top/uPic/hero-bg.png);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
     position: relative;
     z-index: 0;
     overflow-x: hidden;
-  }
 
-  :global(.hui-header) {
-    background-color: unset;
+
+    & > div {
+      padding: 0 100px;
+      box-sizing: border-box;
+    }
+
+    :global(.hui-header) {
+      background-color: unset;
+      padding: 0 100px;
+      box-sizing: border-box;
+    }
   }
 
 }
@@ -118,7 +125,12 @@
     .topSection {
       padding: unset;
 
-      & > header, & > div {
+      & > div {
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      :global(.hui-header) {
         padding: 0 20px;
         box-sizing: border-box;
       }
