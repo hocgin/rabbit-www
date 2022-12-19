@@ -49,7 +49,7 @@ export default defineConfig({
     ...useLogger(),
   ],
   analytics: {
-    ga: '346984577',
+    ga: 'G-RFS6PSF805',
     baidu: '9cda74259b4139e7086f30eb5958809c',
   },
 });
