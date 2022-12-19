@@ -1,4 +1,4 @@
-import { defineConfig } from 'umi';
+import {defineConfig} from 'umi';
 import routerConfig from '../src/router.config';
 
 export const useLogger = () => {
@@ -8,7 +8,7 @@ export const useLogger = () => {
   if (offLogger) {
     result.push([
       'transform-remove-console',
-      { exclude: ['error', 'warn', 'info'] },
+      {exclude: ['error', 'warn', 'info']},
     ]);
   }
   return result;
@@ -40,7 +40,7 @@ export default defineConfig({
       // => 转到服务端地址
       target: 'http://127.0.0.1:20001/',
       changeOrigin: true,
-      pathRewrite: { '^/api': '' },
+      pathRewrite: {'^/api': ''},
     },
   },
   theme: {},
@@ -48,4 +48,8 @@ export default defineConfig({
   extraBabelPlugins: [
     ...useLogger(),
   ],
+  analytics: {
+    ga: '346984577',
+    baidu: '9cda74259b4139e7086f30eb5958809c',
+  },
 });
