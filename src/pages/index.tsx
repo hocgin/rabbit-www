@@ -15,7 +15,8 @@ export default function () {
     <section className={styles.topSection}>
       <Header menus={[
         {label: <a href={'https://www.hocgin.top'}>首页</a>},
-        {label: <a href={'https://nes.hocgin.top'}>🎮 游戏机</a>}
+        {label: <a href={'https://nes.hocgin.top'}>🎮 游戏机</a>},
+        {label: <a href={'https://logspot.hocgin.top'}>🪀 更多作品</a>},
       ]}/>
       <Slide slide={website?.slide}/>
     </section>
