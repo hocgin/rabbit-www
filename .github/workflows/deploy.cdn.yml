@@ -61,10 +61,10 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           LOG: false
       - name: Read Env
-        id: props
+        id: prop
         uses: hocgin/action-json-file-to-env@main
-        with:
-          debug: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
@@ -73,6 +73,16 @@ jobs:
           REMOTE_USER: ${{ env.REMOTE_USER }}
           SSH_PRIVATE_KEY: ${{ env.SERVER_SSH_KEY }}
           TARGET: ${{ env.REMOTE_TARGET }}
+          SOURCE: "dist/"
+          EXCLUDE: "/dist/, /node_modules/"
+      - name: Deploy to Tencant Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          ARGS: "-rltgoDzvO --delete"
+          REMOTE_HOST: ${{ steps.prop.REMOTE_HOST }}
+          REMOTE_USER: ${{ steps.prop.REMOTE_USER }}
+          SSH_PRIVATE_KEY: ${{ steps.prop.SERVER_SSH_KEY }}
+          TARGET: ${{ steps.prop.REMOTE_TARGET }}
           SOURCE: "dist/"
           EXCLUDE: "/dist/, /node_modules/"
       - uses: hocgin/action-qiniu-upload@master
