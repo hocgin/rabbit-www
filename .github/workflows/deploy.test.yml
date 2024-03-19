@@ -19,6 +19,6 @@ jobs:
     steps:
       - name: Read Env
         id: props
-        uses: hocgin/action-json-file-to-env@main
+        uses: hocgin/action-json-file-to-env@v0.0.4
         with:
           debug: true
