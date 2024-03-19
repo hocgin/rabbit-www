@@ -62,7 +62,7 @@ jobs:
           LOG: false
       - name: Read Env
         id: props
-        run: hocgin/action-json-file-to-env
+        uses: hocgin/action-json-file-to-env@main
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
