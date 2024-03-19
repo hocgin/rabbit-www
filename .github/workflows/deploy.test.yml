@@ -21,6 +21,6 @@ jobs:
         id: props
         uses: hocgin/action-json-file-to-env@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
