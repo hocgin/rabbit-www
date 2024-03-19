@@ -79,10 +79,10 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           ARGS: "-rltgoDzvO --delete"
-          REMOTE_HOST: ${{ steps.prop.REMOTE_HOST }}
-          REMOTE_USER: ${{ steps.prop.REMOTE_USER }}
-          SSH_PRIVATE_KEY: ${{ steps.prop.SERVER_SSH_KEY }}
-          TARGET: ${{ steps.prop.REMOTE_TARGET }}
+          REMOTE_HOST: ${{ steps.prop.outputs.REMOTE_HOST }}
+          REMOTE_USER: ${{ steps.prop.outputs.REMOTE_USER }}
+          SSH_PRIVATE_KEY: ${{ steps.prop.outputs.SERVER_SSH_KEY }}
+          TARGET: ${{ steps.prop.outputs.REMOTE_TARGET }}
           SOURCE: "dist/"
           EXCLUDE: "/dist/, /node_modules/"
       - uses: hocgin/action-qiniu-upload@master
