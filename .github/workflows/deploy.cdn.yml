@@ -60,6 +60,9 @@ jobs:
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           LOG: false
+      - name: Read Env
+        id: props
+        run: hocgin/action-json-file-to-env
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
