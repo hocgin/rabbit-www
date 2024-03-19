@@ -1,0 +1,23 @@
+name: Deploy::CDN
+
+on:
+  push:
+    tags:
+      - 'v*'
+    paths-ignore:
+      - 'docs/**'
+      - 'scripts/**'
+      - '*.md'
+      - '*.editorconfig'
+      - '*.gitignore'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Read Env
+        id: props
+        uses: hocgin/action-json-file-to-env@main
+        with:
+          debug: true
