@@ -63,6 +63,8 @@ jobs:
       - name: Read Env
         id: props
         uses: hocgin/action-json-file-to-env@main
+        with:
+          debug: true
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
