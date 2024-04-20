@@ -1,6 +1,13 @@
 {
   "umi.css": "/umi.css",
   "umi.js": "/umi.js",
+  "public/2xwhhijj0M.txt": "/2xwhhijj0M.txt",
+  "public/txt": "/3E84F632D2FE1575.txt",
+  "public/ads.txt": "/ads.txt",
   "index.html": "/index.html",
-  "static/font.woff.ttf": "/static/font.woff.bc6942cd.ttf"
+  "public/jd_root.txt": "/jd_root.txt",
+  "public/robots.txt": "/robots.txt",
+  "public/root.txt": "/root.txt",
+  "static/font.woff.ttf": "/static/font.woff.bc6942cd.ttf",
+  "public/vercel.json": "/vercel.json"
 }
